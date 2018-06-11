@@ -1,0 +1,109 @@
+{
+  "auto_complete_commit_on_tab": true,
+  "auto_complete_delay": 250,
+  "auto_complete_selector": "source - comment",
+  "auto_complete_triggers":
+  [
+    {
+      "characters": "<",
+      "selector": "text.html"
+    }
+  ],
+  "auto_complete_with_fields": true,
+  "binary_file_patterns":
+  [
+    "*.jpg",
+    "*.jpeg",
+    "*.png",
+    "*.gif",
+    "*.ttf",
+    "*.tga",
+    "*.dds",
+    "*.ico",
+    "*.eot",
+    "*.pdf",
+    "*.swf",
+    "*.jar",
+    "*.zip",
+    "node_modules/**/*.*"
+  ],
+  "caret_style": "blink",
+  "close_windows_when_empty": false,
+  "color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
+  "create_window_at_startup": true,
+  "detect_indentation": false,
+  "drag_text": false,
+  "fade_fold_buttons": false,
+  "file_exclude_patterns":
+  [
+    "*.pyc",
+    "*.pyo",
+    "*.exe",
+    "*.dll",
+    "*.obj",
+    "*.o",
+    "*.a",
+    "*.lib",
+    "*.so",
+    "*.dylib",
+    "*.ncb",
+    "*.sdf",
+    "*.suo",
+    "*.pdb",
+    "*.idb",
+    ".DS_Store",
+    "*.class",
+    "*.psd",
+    "*.db"
+  ],
+  "flatland_sidebar_tree_xsmall": true,
+  "folder_exclude_patterns":
+  [
+    ".svn",
+    ".git",
+    ".hg",
+    "CVS",
+    "target/qa-cn",
+    "target/qa-eu",
+    "target/qa-kr",
+    "target/qa-tw",
+    "target/qa-*"
+  ],
+  "font_face": "Droid Sans Mono",
+  "font_options":
+  [
+    "directwrite"
+  ],
+  "font_size": 10,
+  "hot_exit": true,
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
+  "indent_guide_options":
+  [
+    "draw_active"
+  ],
+  "indent_to_bracket": true,
+  "line_padding_bottom": 0,
+  "line_padding_top": 1,
+  "margin": 0,
+  "match_brackets_angle": true,
+  "open_files_in_new_window": true,
+  "preview_on_click": false,
+  "remember_open_files": true,
+  "rulers":
+  [
+    80
+  ],
+  "shift_tab_unindent": true,
+  "show_full_path": true,
+  "show_panel_on_build": true,
+  "tab_size": 2,
+  "theme": "Flatland Dark.sublime-theme",
+  "translate_tabs_to_spaces": true,
+  "trim_automatic_white_space": false,
+  "trim_trailing_white_space_on_save": true,
+  "use_tab_stops": false,
+  "word_wrap": true
+}

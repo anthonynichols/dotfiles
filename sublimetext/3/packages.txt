@@ -1,0 +1,27 @@
+AAAPackageDev
+Alignment
+Autoprefixer
+Base16 Color Schemes
+Better CoffeeScript
+CSSComb Alpha Sort
+Dayle Reese Color Schemes
+EditorConfig
+Emmet
+Freemarker
+Freemarker dev
+Freemarker test
+Git
+Grunt
+Handlebars
+Jade
+LESS
+LiveStyle
+PackageControl
+PyV8
+Sass
+SCSS
+Sidebar Enhancements
+Singleline
+Stylus
+Theme - Flatland
+Theme - Soda

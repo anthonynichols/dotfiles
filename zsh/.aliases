@@ -1,0 +1,25 @@
+
+# Aliases
+# --------
+
+# Inception
+alias zsource="source $DOTFILES/zsh/.zshrc"
+
+# Show/hide hidden files in Finder
+alias showhidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hidehidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# node_modules
+alias npm-exec="PATH=$(npm bin):$PATH"
+
+# node testing annoyance
+alias npm='nocorrect npm'
+
+# git annoyance
+alias git='nocorrect git'
+
+# gulp annoyance
+alias gulp='nocorrect gulp'
+
+# reset npm password
+alias reset-npm-password='sh ~/.dotfiles/zsh/reset-npm-password.sh'

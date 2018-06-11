@@ -1,0 +1,20 @@
+
+# Paths!
+# ------
+
+# Basic PATH setup
+PATH=/usr/local/bin
+PATH=$PATH:/usr/bin
+PATH=$PATH:/bin
+PATH=$PATH:/usr/local/sbin
+PATH=$PATH:/usr/sbin
+PATH=$PATH:/sbin
+
+# Customize beyond the basics
+# PATH=/usr/local/git/bin:$PATH
+# PATH=/usr/local/share/npm/bin:$PATH
+PATH=$HOME/.yarn/bin:$PATH
+PATH=/usr/local/opt/python/libexec/bin:$PATH
+
+# Export when finished with customization
+export PATH
