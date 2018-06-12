@@ -1,13 +1,25 @@
 # ==============================================================================
-# Aliases
+# Paths!
 # ==============================================================================
 
-# Basic export setup
+# Get paths from dotfiles
+source $DOTFILES/zsh/.paths;
+
+# Custom paths go here
 # ------------------------------------------------------------------------------
 
-# For a full list of active aliases, run `alias`.
+# yarn
+if [[ -d $HOME/.yarn ]]; then
+    PATH=$PATH:$HOME/.yarn/bin;
+fi;
 
-# Inception
-alias zsource="source $DOTFILES/zsh/.zshrc"
+# rbenv
+if [[ -d $HOME/.rbenv ]]; then
+    PATH=$HOME/.rbenv/bin:$PATH;
+
+    eval "$(rbenv init -)";
+fi;
 
 # ------------------------------------------------------------------------------
+
+export PATH;

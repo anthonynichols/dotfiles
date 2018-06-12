@@ -1,0 +1,28 @@
+# ==============================================================================
+# Aliases
+# ==============================================================================
+
+# Basic export setup
+# ------------------------------------------------------------------------------
+
+# For a full list of active aliases, run `alias`.
+
+# Get aliases from dotfiles
+source $DOTFILES/zsh/.aliases;
+
+# Custom aliases go here
+# ------------------------------------------------------------------------------
+
+# Show/hide hidden files in Finder
+alias showhidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hidehidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# reset npm password
+# alias reset-npm-password='sh ~/.dotfiles/zsh/reset-npm-password.sh'
+
+# annoyance
+alias npm='nocorrect npm';
+alias git='nocorrect git';
+alias gulp='nocorrect gulp';
+
+# ------------------------------------------------------------------------------

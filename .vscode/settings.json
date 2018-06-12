@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        ".aliases": "shellscript",
+        ".exports": "shellscript",
+        ".hushlogin": "shellscript",
+        ".paths": "shellscript",
+    },
+}
