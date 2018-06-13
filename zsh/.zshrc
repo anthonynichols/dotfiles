@@ -1,5 +1,3 @@
-echo "~/.zshrc";
-
 # Get exports
 source $HOME/.exports;
 
