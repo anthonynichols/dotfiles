@@ -51,8 +51,6 @@ function sync() {
   syncPaths;
   syncTheme;
   syncZshrc;
-
-  source ~/.zshrc;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
