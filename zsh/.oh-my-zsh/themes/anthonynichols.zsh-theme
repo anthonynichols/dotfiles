@@ -3,8 +3,9 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="]$reset_color";
 ZSH_THEME_GIT_PROMPT_DIRTY="$fg[red]+";
 ZSH_THEME_GIT_PROMPT_CLEAN="$fg[green]";
 
-# default_username="anichols";
-DEFAULT_HOSTNAME="spectre001.local";
+if [ -z ${DEFAULT_HOSTNAME+x} ]; then
+  DEFAULT_HOSTNAME=$HOST;
+fi;
 
 function get_pwd() {
   echo "%{$fg[cyan]%}${PWD/$HOME/~}%{$reset_color%}";
@@ -18,7 +19,7 @@ function git_prompt_info() {
 
 function usernamehost() {
   if [[ $HOST != $DEFAULT_HOSTNAME ]]; then
-    echo "%{$fg[blue]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in ";
+    echo "%{$fg[blue]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in";
   else
     echo "%{$fg[blue]%}%n%{$reset_color%} in";
   fi;
@@ -30,7 +31,3 @@ function prompt_icon() {
 
 PROMPT='$(usernamehost) $(get_pwd) $(git_prompt_info)
 $(prompt_icon)';
-
-# PROMPT='
-# %F${fg[blue]}%n ${fg[magenta]}[%m]:${fg[cyan]} $(get_pwd) $(git_prompt_info)%f
-# %F${fg_bold[green]}$ $reset_color%f'
