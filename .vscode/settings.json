@@ -1,8 +1,11 @@
 {
     "files.associations": {
         ".aliases": "shellscript",
+        ".aliases-local": "shellscript",
         ".exports": "shellscript",
+        ".exports-local": "shellscript",
         ".hushlogin": "shellscript",
         ".paths": "shellscript",
+        ".paths-local": "shellscript",
     },
 }

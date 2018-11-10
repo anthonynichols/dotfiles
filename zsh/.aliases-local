@@ -21,8 +21,9 @@ alias hidehidden="defaults write com.apple.finder AppleShowAllFiles -bool false 
 # alias reset-npm-password='sh ~/.dotfiles/zsh/reset-npm-password.sh'
 
 # annoyance
-alias npm='nocorrect npm';
 alias git='nocorrect git';
 alias gulp='nocorrect gulp';
+alias node='nocorrect node';
+alias npm='nocorrect npm';
 
 # ------------------------------------------------------------------------------
