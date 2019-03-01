@@ -10,4 +10,7 @@
 # Inception
 alias zsource="source $DOTFILES/zsh/.zshrc"
 
+# git
+alias gdprev='git diff HEAD HEAD~1'
+
 # ------------------------------------------------------------------------------
