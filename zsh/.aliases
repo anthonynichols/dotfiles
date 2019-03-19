@@ -11,6 +11,6 @@
 alias zsource="source $DOTFILES/zsh/.zshrc"
 
 # git
-alias gdprev='git diff HEAD HEAD~1'
+alias gdprev='git diff HEAD~1 HEAD'
 
 # ------------------------------------------------------------------------------
