@@ -13,4 +13,7 @@ alias zsource="source $DOTFILES/zsh/.zshrc"
 # git
 alias gdprev='git diff HEAD~1 HEAD'
 
+# compress
+alias comp='function _compress(){ tar cjf $1.tar.bz2 $1; };_compress'
+
 # ------------------------------------------------------------------------------
