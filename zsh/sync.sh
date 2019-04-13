@@ -2,31 +2,33 @@
 
 cd "$(dirname "${BASH_SOURCE}")";
 
+DOTFILES=$HOME/.dotfiles
+
 function syncAliases() {
-  # Back up the existing .aliases if it exists before moving over
-  if [[ -f ~/.aliases ]]; then
-    mv ~/.aliases ~/.aliases.orig;
+  # Back up the existing aliases file if it exists before moving over
+  if [[ -f $DOTFILES/aliases.zsh ]]; then
+    mv $DOTFILES/aliases.zsh $DOTFILES/aliases.orig.zsh;
   fi;
 
-  rsync -avh --no-perms .aliases-local ~/.aliases;
+  rsync -avh --no-perms local-aliases.zsh $DOTFILES/aliases.zsh;
 }
 
 function syncExports() {
-  # Back up the existing .exports if it exists before moving over
-  if [[ -f ~/.exports ]]; then
-    mv ~/.exports ~/.exports.orig;
+  # Back up the existing exports file if it exists before moving over
+  if [[ -f $DOTFILES/exports.zsh ]]; then
+    mv $DOTFILES/exports.zsh $DOTFILES/exports.orig.zsh;
   fi;
 
-  rsync -avh --no-perms .exports-local ~/.exports;
+  rsync -avh --no-perms local-exports.zsh $DOTFILES/exports.zsh;
 }
 
-function syncPaths() {
-  # Back up the existing .paths if it exists before moving over
-  if [[ -f ~/.paths ]]; then
-    mv ~/.paths ~/.paths.orig;
+function syncPath() {
+  # Back up the existing path file if it exists before moving over
+  if [[ -f $DOTFILES/path.zsh ]]; then
+    mv $DOTFILES/path.zsh $DOTFILES/path.orig.zsh;
   fi;
 
-  rsync -avh --no-perms .paths-local ~/.paths;
+  rsync -avh --no-perms local-path.zsh $DOTFILES/path.zsh;
 }
 
 function syncTheme() {
@@ -35,7 +37,7 @@ function syncTheme() {
 }
 
 function syncZshrc() {
-  # Back up the existing .zshrc if it exists before moving over
+  # Back up the existing .zshrc file if it exists before moving over
   if [[ -f ~/.zshrc ]]; then
     mv ~/.zshrc ~/.zshrc.orig;
   fi;
@@ -44,11 +46,13 @@ function syncZshrc() {
 }
 
 function sync() {
-  rsync -avh --no-perms .hushlogin ~;
+  rsync -avh --no-perms hushlogin.zsh ~/.hushlogin;
+
+  mkdir -p ~/.dotfiles;
 
   syncAliases;
   syncExports;
-  syncPaths;
+  syncPath;
   syncTheme;
   syncZshrc;
 }
@@ -66,8 +70,9 @@ else
 	fi;
 fi;
 
+unset DOTFILES;
 unset syncAliases;
 unset syncExports;
-unset syncPaths;
+unset syncPath;
 unset syncTheme;
 unset sync;

@@ -1,9 +1,6 @@
 # ==============================================================================
-# Exports!
+# @anthonynichols exports
 # ==============================================================================
-
-# Basic export setup
-# ------------------------------------------------------------------------------
 
 # Path to my oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh;
@@ -11,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh;
 # Highlight section titles in manual pages.
 export LESS_TERMCAP_md="${yellow}";
 
-export MANPATH="/usr/local/man:$MANPATH";
+export MANPATH=/usr/local/man:$MANPATH;
 
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
@@ -36,7 +33,5 @@ fi;
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# hostname
-# export DEFAULT_HOSTNAME="spectre001.local";
-
-# ------------------------------------------------------------------------------
+# nvm
+export NVM_DIR=$HOME/.nvm
