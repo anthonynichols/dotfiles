@@ -24,3 +24,6 @@ alias comp='function _compress(){ tar cjf $1.tar.bz2 $1; };_compress'
 
 # Lazy Find
 alias lfind="l . | grep -i"
+
+# rsync on NAS with custom permissions
+alias rnas='rsync -avh -p --chmod=ug=rwx,o=rx --progress'
