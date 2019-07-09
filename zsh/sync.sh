@@ -13,6 +13,15 @@ function syncAliases() {
   rsync -avh --no-perms local-aliases.zsh $DOTFILES/aliases.zsh;
 }
 
+function syncConfig() {
+  # Back up the existing config file if it exists before moving over
+  if [[ -f $DOTFILES/config.zsh ]]; then
+    mv $DOTFILES/config.zsh $DOTFILES/config.orig.zsh;
+  fi;
+
+  rsync -avh --no-perms local-config.zsh $DOTFILES/config.zsh;
+}
+
 function syncExports() {
   # Back up the existing exports file if it exists before moving over
   if [[ -f $DOTFILES/exports.zsh ]]; then
@@ -51,6 +60,7 @@ function sync() {
   mkdir -p ~/.dotfiles;
 
   syncAliases;
+  syncConfig;
   syncExports;
   syncPath;
   syncTheme;
@@ -72,6 +82,7 @@ fi;
 
 unset DOTFILES;
 unset syncAliases;
+unset syncConfig;
 unset syncExports;
 unset syncPath;
 unset syncTheme;

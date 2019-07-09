@@ -13,11 +13,7 @@ fi;
 # rbenv
 if [[ -d $HOME/.rbenv ]]; then
     PATH=$HOME/.rbenv/bin:$PATH;
-
-    # I feel like this should be eval'ed in the main file.
-    # The export is fine, but I feel like eval'ing or running files breaks in
-    # external modules.
-    # eval "$(rbenv init -)";
+    PATH=$HOME/.rbenv/shims:$PATH;
 fi;
 
 export PATH;
