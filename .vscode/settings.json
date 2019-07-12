@@ -5,6 +5,8 @@
         ".exports": "shellscript",
         ".exports-local": "shellscript",
         ".hushlogin": "shellscript",
+        ".macos": "shellscript",
+        ".macos-work": "shellscript",
         ".paths": "shellscript",
         ".paths-local": "shellscript",
     },
