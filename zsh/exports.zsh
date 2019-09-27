@@ -8,8 +8,8 @@ export ZSH=$HOME/.oh-my-zsh;
 # Highlight section titles in manual pages.
 export LESS_TERMCAP_md="${yellow}";
 
+# man
 export MANPATH=/usr/local/man:$MANPATH;
-
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
 
@@ -34,4 +34,4 @@ fi;
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # nvm
-# export NVM_DIR=$HOME/.nvm
+export NVM_DIR=$HOME/.nvm
