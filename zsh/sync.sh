@@ -45,6 +45,10 @@ function syncTheme() {
     ./.oh-my-zsh/themes/anthonynichols.zsh-theme ~/.oh-my-zsh/themes;
 }
 
+function syncPlugins() {
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+}
+
 function syncZshrc() {
   # Back up the existing .zshrc file if it exists before moving over
   if [[ -f ~/.zshrc ]]; then
@@ -64,6 +68,7 @@ function sync() {
   syncExports;
   syncPath;
   syncTheme;
+  syncPlugins;
   syncZshrc;
 }
 
@@ -86,4 +91,5 @@ unset syncConfig;
 unset syncExports;
 unset syncPath;
 unset syncTheme;
+unset syncPlugins;
 unset sync;
