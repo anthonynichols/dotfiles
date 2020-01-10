@@ -8,4 +8,4 @@ export COMMON_DOTFILES=$HOME/code/dotfiles;
 # Get common exports
 source $COMMON_DOTFILES/zsh/exports.zsh;
 
-export DEFAULT_HOSTNAME="spectre001.local";
+export DEFAULT_HOSTNAME="zenodotus.local";

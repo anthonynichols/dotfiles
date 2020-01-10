@@ -1,3 +1,3 @@
 # My Dotfiles
 
-A few saved dev settings for Mac.
+A few saved settings for unRaid.
