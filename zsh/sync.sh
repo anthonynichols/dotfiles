@@ -42,7 +42,7 @@ function syncPath() {
 
 function syncTheme() {
   rsync -avh --no-perms \
-    ./.oh-my-zsh/themes/anthonynichols.zsh-theme ~/.oh-my-zsh/themes
+    ./.oh-my-zsh/themes/anthonynichols.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes
 }
 
 function syncPlugins() {
