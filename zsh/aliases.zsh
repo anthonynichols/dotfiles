@@ -13,6 +13,12 @@ alias lsa='ls -lAh'
 alias l='ls -lAh'
 alias la='ls -lah'
 
+# NOTE: This is done for me already, yay oh-my-zsh!
+# Use gls if it exists because its better
+# if [[ -x "$(command -v gls)" ]]; then
+#   alias ls='gls --color=tty'
+# fi
+
 # Show/hide hidden files in macOS Finder
 alias showhidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hidehidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
