@@ -3,9 +3,9 @@
 # ==============================================================================
 
 # Set common .dotfiles location
-export COMMON_DOTFILES=$HOME/code/dotfiles;
+export COMMON_DOTFILES=$HOME/code/dotfiles
 
 # Get common exports
-source $COMMON_DOTFILES/zsh/exports.zsh;
+source $COMMON_DOTFILES/zsh/exports.zsh
 
-export DEFAULT_HOSTNAME="computer.local";
+export DEFAULT_HOSTNAME="computer.local"
