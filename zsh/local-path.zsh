@@ -3,6 +3,6 @@
 # ==============================================================================
 
 # Get common path
-source $COMMON_DOTFILES/zsh/path.zsh;
+source $COMMON_DOTFILES/zsh/path.zsh
 
-export PATH;
+export PATH

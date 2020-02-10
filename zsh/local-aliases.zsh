@@ -5,9 +5,9 @@
 # ==============================================================================
 
 # Get common aliases
-source $COMMON_DOTFILES/zsh/aliases.zsh;
+source $COMMON_DOTFILES/zsh/aliases.zsh
 
 # annoyance
-alias git='nocorrect git';
-alias node='nocorrect node';
-alias npm='nocorrect npm';
+alias git='nocorrect git'
+alias node='nocorrect node'
+alias npm='nocorrect npm'
