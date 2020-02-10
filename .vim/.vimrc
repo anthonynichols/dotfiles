@@ -1,60 +1,108 @@
 " Make vim more useful
 set nocompatible
-" Enhance command-line completion
-set wildmenu
+
 " Allow cursor keys in insert mode
 set esckeys
+
 " Optimize for fast terminal connections
 set ttyfast
+
 " Add the g flag to search/replace by default
 set gdefault
+
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
+
 " Change mapleader
 let mapleader=","
+
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
-" Centralize backups, swapfiles and undo history
-set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
-if exists("&undodir")
-  set undodir=~/.vim/undo
-endif
+
+" Don’t show the intro message when starting vim
+set shortmess=atI
+
+" Show the current mode
+set showmode
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors and Fonts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable syntax highlighting
+syntax enable
 
 " Enable line numbers
 set number
-" Enable syntax highlighting
-syntax on
-" Make tabs as wide as two spaces
-set tabstop=2
-" Highlight searches
-set hlsearch
-" Ignore case of searches
-set ignorecase
-" Highlight dynamically as pattern is typed
-set incsearch
-" Always show status line
-set laststatus=2
-" Enable mouse in all modes
-set mouse=a
-" Don’t reset cursor to start of line when moving around.
-set nostartofline
+
+" Enable 256 colors palette in Gnome Terminal
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
+
+set background=dark
+
+try
+    colorscheme solarized
+    let g:solarized_termtrans=1
+catch
+endtry
+
+" Set extra options when running in GUI mode
+if has("gui_running")
+    set guioptions-=T
+    set guioptions-=e
+    set t_Co=256
+    set guitablabel=%M\ %t
+endif
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git etc. anyway...
+set nobackup
+set nowb
+set noswapfile
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+" Auto indent
+set ai
+
+" Smart indent
+set si
+
+" Wrap lines
+set wrap
+
 " Show the cursor position
 set ruler
-" Don’t show the intro message when starting vim
-set shortmess=atI
-" Show the current mode
-set showmode
-" Show the filename in the window titlebar
-set title
-if exists("&relativenumber")
-  " Use relative line numbers
-  set relativenumber
-  au BufReadPost * set relativenumber
-endif
+
+" Highlight the current line
+set cursorline
+
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
+
+" Show the filename in the window titlebar
+set title
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace ()
