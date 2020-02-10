@@ -21,17 +21,5 @@ export LC_ALL='en_US.UTF-8';
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim';
 else
-  # export EDITOR='code';
-  # or Atom
-  # export EDITOR='atom';
   export EDITOR='vim';
 fi;
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# nvm
-# export NVM_DIR=$HOME/.nvm
