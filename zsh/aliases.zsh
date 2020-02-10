@@ -69,7 +69,8 @@ alias la='ls -lah'
 alias lfind='l . | grep -i'
 
 # Global grep
-alias -g G='| grep -i'
+# This apparently does not work on unraid
+# alias -g G='| grep -i'
 
 # Copy directory and its contents
 alias cpd='cp -r'
