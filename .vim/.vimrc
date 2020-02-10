@@ -11,7 +11,7 @@ set ttyfast
 set gdefault
 
 " Use UTF-8 without BOM
-set encoding=utf-8 nobomb
+set encoding=utf-8
 
 " Change mapleader
 let mapleader=","
@@ -25,42 +25,6 @@ set shortmess=atI
 
 " Show the current mode
 set showmode
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable syntax highlighting
-syntax enable
-
-" Enable line numbers
-set number
-
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
-
-set background=dark
-
-try
-    colorscheme solarized
-    let g:solarized_termtrans=1
-catch
-endtry
-
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions-=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
-
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
-
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -79,9 +43,9 @@ set expandtab
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" Make tabs as wide as two spaces
+set shiftwidth=2
+set tabstop=2
 
 " Auto indent
 set ai
@@ -91,6 +55,12 @@ set si
 
 " Wrap lines
 set wrap
+
+" Enable mouse in all modes
+set mouse=a
+
+" Don’t reset cursor to start of line when moving around.
+set nostartofline
 
 " Show the cursor position
 set ruler
@@ -113,3 +83,58 @@ function! StripWhitespace ()
 	call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace ()<CR>
+
+" Specify a directory for plugins
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-polyglot'
+
+" Initialize plugin system
+call plug#end()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors, fonts, and UI
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable syntax highlighting
+syntax enable
+
+" Enable line numbers
+set number
+
+" set background=dark
+
+" Set extra options when running in GUI mode
+" if has("gui_running")
+"     set guioptions-=T
+"     set guioptions-=e
+"     set t_Co=256
+"     set guitablabel=%M\ %t
+" endif
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+" Enable the color scheme
+
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+colorscheme onedark
