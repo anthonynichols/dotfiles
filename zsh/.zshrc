@@ -9,35 +9,31 @@ export DOTFILES=$HOME/.dotfiles
 # Exports
 # ------------------------------------------------------------------------------
 
-source $DOTFILES/exports.zsh;
+source $DOTFILES/exports.zsh
 
 # ------------------------------------------------------------------------------
 # Path
 # ------------------------------------------------------------------------------
 
-source $DOTFILES/path.zsh;
+source $DOTFILES/path.zsh
 
 # ------------------------------------------------------------------------------
 # ZSH config
 # ------------------------------------------------------------------------------
 
-ZSH_THEME="anthonynichols";
+ZSH_THEME="anthonynichols"
 
 ENABLE_CORRECTION="true"
 
-plugins=(
-  git
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-);
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh;
+source $ZSH/oh-my-zsh.sh
 
 # ------------------------------------------------------------------------------
 # Aliases
 # ------------------------------------------------------------------------------
 
-source $DOTFILES/aliases.zsh;
+source $DOTFILES/aliases.zsh
 
 # ------------------------------------------------------------------------------
 # Local config
