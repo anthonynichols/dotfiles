@@ -31,6 +31,3 @@ fi;
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# nvm
-# export NVM_DIR=$HOME/.nvm
