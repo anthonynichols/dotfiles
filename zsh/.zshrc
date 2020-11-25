@@ -2,20 +2,20 @@
 # @anthonynichols zsh configuration
 # ==============================================================================
 
-# Set .dotfiles location
-export DOTFILES=$HOME/.dotfiles
+# Set local .zsh files location
+export ZCONFIGDIR=$HOME/.zsh
 
 # ------------------------------------------------------------------------------
 # Exports
 # ------------------------------------------------------------------------------
 
-source $DOTFILES/exports.zsh
+source $ZCONFIGDIR/exports.zsh
 
 # ------------------------------------------------------------------------------
 # Path
 # ------------------------------------------------------------------------------
 
-source $DOTFILES/path.zsh
+source $ZCONFIGDIR/path.zsh
 
 # ------------------------------------------------------------------------------
 # ZSH config
@@ -33,7 +33,7 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 # ------------------------------------------------------------------------------
 
-source $DOTFILES/aliases.zsh
+source $ZCONFIGDIR/aliases.zsh
 
 # ------------------------------------------------------------------------------
 # Local config
