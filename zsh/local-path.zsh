@@ -3,7 +3,7 @@
 # ==============================================================================
 
 # Get common path
-source $COMMON_DOTFILES/zsh/path.zsh
+source $COMMON_ZCONFIGDIR/path.zsh
 
 # yarn
 if [[ -d $HOME/.yarn ]]; then

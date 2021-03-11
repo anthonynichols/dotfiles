@@ -5,7 +5,7 @@
 # ==============================================================================
 
 # Get common aliases
-source $COMMON_DOTFILES/zsh/aliases.zsh
+source $COMMON_ZCONFIGDIR/aliases.zsh
 
 # annoyance
 alias git='nocorrect git'
