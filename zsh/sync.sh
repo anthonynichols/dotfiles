@@ -56,6 +56,15 @@ function syncPlugins() {
   fi
 }
 
+function syncDirColors() {
+  # Back up the existing .dir_colors file if it exists before moving over
+  if [[ -f $ZCONFIGDIR/.dir_colors ]]; then
+    mv $ZCONFIGDIR/.dir_colors $ZCONFIGDIR/.dir_colors.orig
+  fi
+
+  rsync -avh --no-perms .dir_colors $ZCONFIGDIR/.dir_colors
+}
+
 function syncZshrc() {
   # Back up the existing .zshrc file if it exists before moving over
   if [[ -f ~/.zshrc ]]; then
@@ -74,6 +83,7 @@ function sync() {
   syncPath
   syncTheme
   syncPlugins
+  syncDirColors
   syncZshrc
 }
 
@@ -97,4 +107,6 @@ unset syncExports
 unset syncPath
 unset syncTheme
 unset syncPlugins
+unset syncDirColors
+unset syncZshrc
 unset sync
