@@ -6,3 +6,8 @@
 function lfind() {
   l ${2:-.} | grep -i ${1}
 }
+
+# Make dir and go!
+function mkdirpgo() {
+  mkdir -p -- "$1" && cd -P -- "$1"
+}
