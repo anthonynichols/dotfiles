@@ -13,4 +13,4 @@ alias node='nocorrect node'
 alias npm='nocorrect npm'
 
 # Fix permissions
-alias fix-perms='chmod -R 755 . && chown -R nobody:users'
+alias fix-perms='chmod -R 755 . && chown -R nobody:users .'
