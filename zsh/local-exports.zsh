@@ -2,11 +2,11 @@
 # local exports
 # ==============================================================================
 
-# Set common .dotfiles location
-export COMMON_DOTFILES=$HOME/code/dotfiles
+# Set common zsh config directory location
+export COMMON_ZCONFIGDIR=$HOME/code/dotfiles/zsh
 
 # Get common exports
-source $COMMON_DOTFILES/zsh/exports.zsh
+source $COMMON_ZCONFIGDIR/exports.zsh
 
 export DEFAULT_HOSTNAME="zenodotus.local"
 
