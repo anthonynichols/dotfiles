@@ -2,42 +2,42 @@
 
 cd "$(dirname "${BASH_SOURCE}")"
 
-DOTFILES=$HOME/.dotfiles
+ZCONFIGDIR=${HOME:-~}/.zsh
 
 function syncAliases() {
   # Back up the existing aliases file if it exists before moving over
-  if [[ -f $DOTFILES/aliases.zsh ]]; then
-    mv $DOTFILES/aliases.zsh $DOTFILES/aliases.orig.zsh
+  if [[ -f $ZCONFIGDIR/aliases.zsh ]]; then
+    mv $ZCONFIGDIR/aliases.zsh $ZCONFIGDIR/aliases.orig.zsh
   fi
 
-  rsync -avh --no-perms local-aliases.zsh $DOTFILES/aliases.zsh
+  rsync -avh --no-perms local-aliases.zsh $ZCONFIGDIR/aliases.zsh
 }
 
 function syncConfig() {
   # Back up the existing config file if it exists before moving over
-  if [[ -f $DOTFILES/config.zsh ]]; then
-    mv $DOTFILES/config.zsh $DOTFILES/config.orig.zsh
+  if [[ -f $ZCONFIGDIR/config.zsh ]]; then
+    mv $ZCONFIGDIR/config.zsh $ZCONFIGDIR/config.orig.zsh
   fi
 
-  rsync -avh --no-perms local-config.zsh $DOTFILES/config.zsh
+  rsync -avh --no-perms local-config.zsh $ZCONFIGDIR/config.zsh
 }
 
 function syncExports() {
   # Back up the existing exports file if it exists before moving over
-  if [[ -f $DOTFILES/exports.zsh ]]; then
-    mv $DOTFILES/exports.zsh $DOTFILES/exports.orig.zsh
+  if [[ -f $ZCONFIGDIR/exports.zsh ]]; then
+    mv $ZCONFIGDIR/exports.zsh $ZCONFIGDIR/exports.orig.zsh
   fi
 
-  rsync -avh --no-perms local-exports.zsh $DOTFILES/exports.zsh
+  rsync -avh --no-perms local-exports.zsh $ZCONFIGDIR/exports.zsh
 }
 
 function syncPath() {
   # Back up the existing path file if it exists before moving over
-  if [[ -f $DOTFILES/path.zsh ]]; then
-    mv $DOTFILES/path.zsh $DOTFILES/path.orig.zsh
+  if [[ -f $ZCONFIGDIR/path.zsh ]]; then
+    mv $ZCONFIGDIR/path.zsh $ZCONFIGDIR/path.orig.zsh
   fi
 
-  rsync -avh --no-perms local-path.zsh $DOTFILES/path.zsh
+  rsync -avh --no-perms local-path.zsh $ZCONFIGDIR/path.zsh
 }
 
 function syncTheme() {
@@ -66,8 +66,8 @@ function syncZshrc() {
 }
 
 function sync() {
-  rsync -avh --no-perms hushlogin.zsh ~/.hushlogin
-  mkdir -p ~/.dotfiles
+  rsync -avh --no-perms hushlogin.zsh ${HOME:-~}/.hushlogin
+  mkdir -p ${HOME:-~}/.zsh
   syncAliases
   syncConfig
   syncExports
@@ -90,7 +90,7 @@ else
 	fi
 fi
 
-unset DOTFILES
+unset ZCONFIGDIR
 unset syncAliases
 unset syncConfig
 unset syncExports

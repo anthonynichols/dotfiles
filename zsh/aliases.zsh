@@ -25,52 +25,8 @@ alias l='ls -lAh'
 # Override the `la` provided by oh-my-zsh
 alias la='ls -lah'
 
-# Removing this function for now
-# function ls__help {
-#     echo "
-# List contents:
-#     -l
-#         use a long listing format
-
-#     -A, --almost-all
-#         do not list implied . and ..
-
-#     -h, --human-readable
-#         with -l, print sizes in human readable format (e.g., 1K 234M 2G)
-
-#     -t
-#         sort by modification time
-
-#     -S
-#         sort by file size
-
-#     -X
-#         sort alphabetically by entry extension
-
-#     -r, --reverse
-#         reverse order while sorting
-
-#     --group-directories-first
-#         group directories before files
-
-#     -I, --ignore=PATTERN
-#         do not list implied entries matching shell PATTERN
-
-
-# Examples:
-#     l -t
-#         List contents by date, newest at top
-#     l -tr
-#         List contents by date, newest at bottom
-# "
-# }
-
-# Lazy Find
-alias lfind='l . | grep -i'
-
-# Global grep
-# This apparently does not work on unraid
-# alias -g G='| grep -i'
-
 # Copy directory and its contents
 alias cpd='cp -r'
+
+# Make directory with -p
+alias mkdirp='mkdir -p'
