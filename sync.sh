@@ -2,8 +2,19 @@
 
 cd "$(dirname "${BASH_SOURCE}")"
 
+function syncGo() {
+  # Back up the existing go file if it exists before moving over
+  if [[ -f /boot/config/go ]]; then
+    mv /boot/config/go /boot/config/go.orig
+  fi
+
+  rsync -avh go /boot/config/go
+  chmod 600 /boot/config/go
+}
+
 function sync() {
   rsync -avh --no-perms .vim .vimrc ~
+  syncGo
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -17,4 +28,5 @@ else
 	fi
 fi
 
+unset syncGo
 unset sync
