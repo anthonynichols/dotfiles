@@ -29,5 +29,3 @@ alias gdprev='git diff HEAD~1 HEAD'
 # Compress
 alias comp='function _compress(){ tar cjf $1.tar.bz2 $1; };_compress'
 
-# Lazy Find
-alias lfind="l . | grep -i"

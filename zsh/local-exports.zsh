@@ -2,7 +2,7 @@
 # local exports
 # ==============================================================================
 
-# Set common .dotfiles location
+# Set common dotfiles location
 export COMMON_DOTFILES=$HOME/code/dotfiles
 
 # Get common exports
