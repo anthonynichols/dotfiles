@@ -15,11 +15,11 @@
 # --group-directories-first = group directories before files
 # -I, --ignore=PATTERN = do not list implied entries matching shell `PATTERN`
 # Override the `lsa` provided by oh-my-zsh
-alias lsa='ls -lAh'
+alias lsa='ls -lAhv'
 # Override the `l` provided by oh-my-zsh
-alias l='ls -lAh'
+alias l='ls -lAhv'
 # Override the `la` provided by oh-my-zsh
-alias la='ls -lah'
+alias la='ls -lahv'
 
 # Copy directory and its contents
 alias cpd='cp -r'
