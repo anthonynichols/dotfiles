@@ -21,10 +21,6 @@ alias l='ls -lAh'
 # Override the `la` provided by oh-my-zsh
 alias la='ls -lah'
 
-# Show/hide hidden files in macOS Finder
-alias showhidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hidehidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
 # Copy directory and its contents
 alias cpd='cp -r'
 
