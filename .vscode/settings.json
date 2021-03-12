@@ -2,6 +2,7 @@
     "files.associations": {
         ".aliases": "shellscript",
         ".aliases-local": "shellscript",
+        ".dir_colors": "shellscript",
         ".exports": "shellscript",
         ".exports-local": "shellscript",
         ".hushlogin": "shellscript",
