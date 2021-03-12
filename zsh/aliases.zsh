@@ -20,8 +20,6 @@ alias lsa='ls -lAh'
 alias l='ls -lAh'
 # Override the `la` provided by oh-my-zsh
 alias la='ls -lah'
-# Sort with -v
-alias lv='ls -lAhv'
 
 # Copy directory and its contents
 alias cpd='cp -r'
