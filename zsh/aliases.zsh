@@ -37,3 +37,5 @@ alias gdprev='git diff HEAD~1 HEAD'
 # Compress
 # alias comp='function _compress(){ tar cjf $1.tar.bz2 $1; };_compress'
 
+# Get a count of the files in a directory
+alias dircount="ls -F | grep -v / | wc -l"
