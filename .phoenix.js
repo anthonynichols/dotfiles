@@ -72,9 +72,9 @@ function bottomHalf() {
 Key.on("keypad2", ["ctrl", "shift"], bottomHalf);
 
 // -----------------------------------------------------------------------------
-// bottom left quarter = width: 50%, height: 50%, x: 0, y: 50%
+// bottom left half = width: 50%, height: 50%, x: 0, y: 50%
 // -----------------------------------------------------------------------------
-function bottomLeftQuarter() {
+function bottomLeftHalf() {
   let window = Window.focused();
 
   if (window) {
@@ -94,12 +94,12 @@ function bottomLeftQuarter() {
   }
 }
 
-Key.on("keypad1", ["ctrl", "shift"], bottomLeftQuarter);
+Key.on("keypad1", ["ctrl", "shift"], bottomLeftHalf);
 
 // -----------------------------------------------------------------------------
-// bottom right quarter = width: 50%, height: 50%, x: 50%, y: 50%
+// bottom right half = width: 50%, height: 50%, x: 50%, y: 50%
 // -----------------------------------------------------------------------------
-function bottomRightQuarter() {
+function bottomRightHalf() {
   let window = Window.focused();
 
   if (window) {
@@ -118,7 +118,8 @@ function bottomRightQuarter() {
     });
   }
 }
-Key.on("keypad3", ["ctrl", "shift"], bottomRightQuarter);
+
+Key.on("keypad3", ["ctrl", "shift"], bottomRightHalf);
 
 // -----------------------------------------------------------------------------
 // left half = width: 50%, height: 100%, x: 0, y: 0
@@ -141,6 +142,7 @@ function leftHalf() {
     });
   }
 }
+
 Key.on("keypad4", ["ctrl", "shift"], leftHalf);
 
 // -----------------------------------------------------------------------------
@@ -164,12 +166,13 @@ function rightHalf() {
     });
   }
 }
+
 Key.on("keypad6", ["ctrl", "shift"], rightHalf);
 
 // -----------------------------------------------------------------------------
-// top left quarter = width: 50%, height: 50%, x: 0, y: 0
+// top left half = width: 50%, height: 50%, x: 0, y: 0
 // -----------------------------------------------------------------------------
-function topLeftQuarter() {
+function topLeftHalf() {
   let window = Window.focused();
 
   if (window) {
@@ -188,12 +191,13 @@ function topLeftQuarter() {
     });
   }
 }
-Key.on("keypad7", ["ctrl", "shift"], topLeftQuarter);
+
+Key.on("keypad7", ["ctrl", "shift"], topLeftHalf);
 
 // -----------------------------------------------------------------------------
-// top right quarter = width: 50%, height: 50%, x: 50%, y: 0
+// top right half = width: 50%, height: 50%, x: 50%, y: 0
 // -----------------------------------------------------------------------------
-function topRightQuarter() {
+function topRightHalf() {
   let window = Window.focused();
 
   if (window) {
@@ -212,57 +216,8 @@ function topRightQuarter() {
     });
   }
 }
-Key.on("keypad9", ["ctrl", "shift"], topRightQuarter);
 
-// -----------------------------------------------------------------------------
-// bottom left one third height = width: 50%, height: 33%, x: 0, y: 66%
-// -----------------------------------------------------------------------------
-function bottomLeftThirdHeight() {
-  let window = Window.focused();
-
-  if (window) {
-    let screen = window.screen().flippedVisibleFrame();
-    let oneThirdScreenHeight = screen.height / 3;
-    let twoThirdScreenHeight = oneThirdScreenHeight * 2;
-    let halfScreenWidth = screen.width / 2;
-
-    window.setTopLeft({
-      x: screen.x,
-      y: twoThirdScreenHeight + 22,
-    });
-
-    window.setSize({
-      height: oneThirdScreenHeight,
-      width: halfScreenWidth,
-    });
-  }
-}
-Key.on("keypad1", ["ctrl", "shift", "alt"], bottomLeftThirdHeight);
-
-// -----------------------------------------------------------------------------
-// bottom right one third height = width: 50%, height: 33%, x: 50%, y: 66%
-// -----------------------------------------------------------------------------
-function bottomRightThirdHeight() {
-  let window = Window.focused();
-
-  if (window) {
-    let screen = window.screen().flippedVisibleFrame();
-    let oneThirdScreenHeight = screen.height / 3;
-    let twoThirdScreenHeight = oneThirdScreenHeight * 2;
-    let halfScreenWidth = screen.width / 2;
-
-    window.setTopLeft({
-      x: screen.x + halfScreenWidth,
-      y: twoThirdScreenHeight + 22,
-    });
-
-    window.setSize({
-      height: oneThirdScreenHeight,
-      width: halfScreenWidth,
-    });
-  }
-}
-Key.on("keypad3", ["ctrl", "shift", "alt"], bottomRightThirdHeight);
+Key.on("keypad9", ["ctrl", "shift"], topRightHalf);
 
 // -----------------------------------------------------------------------------
 // top left two third height = width: 50%, height: 66%, x: 0, y: 0
@@ -287,6 +242,7 @@ function topLeftTwoThirdHeight() {
     });
   }
 }
+
 Key.on("keypad7", ["ctrl", "shift", "alt"], topLeftTwoThirdHeight);
 
 // -----------------------------------------------------------------------------
@@ -312,7 +268,162 @@ function topRightTwoThirdHeight() {
     });
   }
 }
+
 Key.on("keypad9", ["ctrl", "shift", "alt"], topRightTwoThirdHeight);
+
+// -----------------------------------------------------------------------------
+// bottom left two third height = width: 50%, height: 66%, x: 0, y: 66%
+// -----------------------------------------------------------------------------
+function bottomLeftTwoThirdHeight() {
+  let window = Window.focused();
+
+  if (window) {
+    let screen = window.screen().flippedVisibleFrame();
+    let oneThirdScreenHeight = screen.height / 3;
+    let twoThirdScreenHeight = oneThirdScreenHeight * 2;
+    let halfScreenWidth = screen.width / 2;
+
+    window.setTopLeft({
+      x: screen.x,
+      y: oneThirdScreenHeight + 24,
+    });
+
+    window.setSize({
+      height: twoThirdScreenHeight,
+      width: halfScreenWidth,
+    });
+  }
+}
+
+Key.on("keypad1", ["ctrl", "shift", "alt"], bottomLeftTwoThirdHeight);
+
+// -----------------------------------------------------------------------------
+// bottom right two third height = width: 50%, height: 66%, x: 50%, y: 66%
+// -----------------------------------------------------------------------------
+function bottomRightTwoThirdHeight() {
+  let window = Window.focused();
+
+  if (window) {
+    let screen = window.screen().flippedVisibleFrame();
+    let oneThirdScreenHeight = screen.height / 3;
+    let twoThirdScreenHeight = oneThirdScreenHeight * 2;
+    let halfScreenWidth = screen.width / 2;
+
+    window.setTopLeft({
+      x: screen.x + halfScreenWidth,
+      y: oneThirdScreenHeight + 24,
+    });
+
+    window.setSize({
+      height: twoThirdScreenHeight,
+      width: halfScreenWidth,
+    });
+  }
+}
+
+Key.on("keypad3", ["ctrl", "shift", "alt"], bottomRightTwoThirdHeight);
+
+// -----------------------------------------------------------------------------
+// top left one third height = width: 50%, height: 33%, x: 0, y: 0
+// -----------------------------------------------------------------------------
+function topLeftOneThirdHeight() {
+  let window = Window.focused();
+
+  if (window) {
+    let screen = window.screen().flippedVisibleFrame();
+    let oneThirdScreenHeight = screen.height / 3;
+    let halfScreenWidth = screen.width / 2;
+
+    window.setTopLeft({
+      x: screen.x,
+      y: screen.y,
+    });
+
+    window.setSize({
+      height: oneThirdScreenHeight,
+      width: halfScreenWidth,
+    });
+  }
+}
+
+Key.on("keypad7", ["ctrl", "shift", "cmd"], topLeftOneThirdHeight);
+
+// -----------------------------------------------------------------------------
+// top right one third height = width: 50%, height: 33%, x: 50%, y: 0
+// -----------------------------------------------------------------------------
+function topRightOneThirdHeight() {
+  let window = Window.focused();
+
+  if (window) {
+    let screen = window.screen().flippedVisibleFrame();
+    let oneThirdScreenHeight = screen.height / 3;
+    let halfScreenWidth = screen.width / 2;
+
+    window.setTopLeft({
+      x: screen.x + halfScreenWidth,
+      y: screen.y,
+    });
+
+    window.setSize({
+      height: oneThirdScreenHeight,
+      width: halfScreenWidth,
+    });
+  }
+}
+
+Key.on("keypad9", ["ctrl", "shift", "cmd"], topRightOneThirdHeight);
+
+// -----------------------------------------------------------------------------
+// bottom left one third height = width: 50%, height: 33%, x: 0, y: 66%
+// -----------------------------------------------------------------------------
+function bottomLeftOneThirdHeight() {
+  let window = Window.focused();
+
+  if (window) {
+    let screen = window.screen().flippedVisibleFrame();
+    let oneThirdScreenHeight = screen.height / 3;
+    let twoThirdScreenHeight = oneThirdScreenHeight * 2;
+    let halfScreenWidth = screen.width / 2;
+
+    window.setTopLeft({
+      x: screen.x,
+      y: twoThirdScreenHeight + 24,
+    });
+
+    window.setSize({
+      height: oneThirdScreenHeight,
+      width: halfScreenWidth,
+    });
+  }
+}
+
+Key.on("keypad1", ["ctrl", "shift", "cmd"], bottomLeftOneThirdHeight);
+
+// -----------------------------------------------------------------------------
+// bottom right one third height = width: 50%, height: 33%, x: 50%, y: 66%
+// -----------------------------------------------------------------------------
+function bottomRightOneThirdHeight() {
+  let window = Window.focused();
+
+  if (window) {
+    let screen = window.screen().flippedVisibleFrame();
+    let oneThirdScreenHeight = screen.height / 3;
+    let twoThirdScreenHeight = oneThirdScreenHeight * 2;
+    let halfScreenWidth = screen.width / 2;
+
+    window.setTopLeft({
+      x: screen.x + halfScreenWidth,
+      y: twoThirdScreenHeight + 24,
+    });
+
+    window.setSize({
+      height: oneThirdScreenHeight,
+      width: halfScreenWidth,
+    });
+  }
+}
+
+Key.on("keypad3", ["ctrl", "shift", "cmd"], bottomRightOneThirdHeight);
 
 // -----------------------------------------------------------------------------
 // middle one third = width: 33%, height: 100%, x: 33%, y: 0
@@ -335,6 +446,7 @@ function middleOneThird() {
     });
   }
 }
+
 Key.on("keypad5", ["ctrl", "shift", "cmd"], middleOneThird);
 
 // -----------------------------------------------------------------------------
@@ -358,6 +470,7 @@ function leftOneThird() {
     });
   }
 }
+
 Key.on("keypad4", ["ctrl", "shift", "cmd"], leftOneThird);
 
 // -----------------------------------------------------------------------------
@@ -382,6 +495,7 @@ function rightOneThird() {
     });
   }
 }
+
 Key.on("keypad6", ["ctrl", "shift", "cmd"], rightOneThird);
 
 // -----------------------------------------------------------------------------
@@ -406,6 +520,7 @@ function middleTwoThird() {
     });
   }
 }
+
 Key.on("keypad5", ["ctrl", "shift", "alt"], middleTwoThird);
 
 // -----------------------------------------------------------------------------
@@ -429,6 +544,7 @@ function leftTwoThird() {
     });
   }
 }
+
 Key.on("keypad4", ["ctrl", "shift", "alt"], leftTwoThird);
 
 // -----------------------------------------------------------------------------
@@ -453,4 +569,5 @@ function rightTwoThird() {
     });
   }
 }
+
 Key.on("keypad6", ["ctrl", "shift", "alt"], rightTwoThird);
