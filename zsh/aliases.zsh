@@ -18,6 +18,8 @@
 # -r, --reverse = reverse order while sorting
 # --group-directories-first = group directories before files
 # -I, --ignore=PATTERN = do not list implied entries matching shell `PATTERN`
+# Override the `ls` command with colors
+alias ls='ls --color=always'
 # Override the `lsa` provided by oh-my-zsh
 alias lsa='ls -lAh'
 # Override the `l` provided by oh-my-zsh
