@@ -8,7 +8,7 @@ PATH=/usr/local/bin
 # User directory
 if [[ -d ~/bin ]]; then
     PATH=~/bin:$PATH
-fi;
+fi
 
 PATH=$PATH:/usr/bin
 PATH=$PATH:/bin

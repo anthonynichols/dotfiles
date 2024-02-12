@@ -2,7 +2,9 @@
 
 cd "$(dirname "${BASH_SOURCE}")"
 
-ZCONFIGDIR=${HOME:-~}/.zsh
+HOME=/root
+ZCONFIGDIR=$HOME/.zsh
+ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 
 function syncAliases() {
   # Back up the existing aliases file if it exists before moving over
@@ -42,38 +44,48 @@ function syncPath() {
 
 function syncTheme() {
   rsync -avh --no-perms \
-    ./.oh-my-zsh/themes/anthonynichols.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes
+    ./.oh-my-zsh/themes/anthonynichols.zsh-theme $ZSH_CUSTOM/themes
 }
 
 function syncPlugins() {
-  if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]]; then
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    chmod g-w,o-w ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  if [[ ! -d $ZSH_CUSTOM/plugins/zsh-autosuggestions ]]; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+    chmod g-w,o-w $ZSH_CUSTOM/plugins/zsh-autosuggestions
   fi
-  if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]]; then
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-    chmod g-w,o-w ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  if [[ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]]; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+    chmod g-w,o-w $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
   fi
+}
+
+function syncDirColors() {
+  # Back up the existing .dir_colors file if it exists before moving over
+  if [[ -f $HOME/.dir_colors ]]; then
+    mv $HOME/.dir_colors $HOME/.dir_colors.orig
+  fi
+
+  rsync -avh --no-perms .dir_colors $HOME
 }
 
 function syncZshrc() {
   # Back up the existing .zshrc file if it exists before moving over
-  if [[ -f ~/.zshrc ]]; then
-    mv ~/.zshrc ~/.zshrc.orig
+  if [[ -f $HOME/.zshrc ]]; then
+    mv $HOME/.zshrc $HOME/.zshrc.orig
   fi
 
-  rsync -avh --no-perms .zshrc ~
+  rsync -avh --no-perms .zshrc $HOME
 }
 
 function sync() {
-  rsync -avh --no-perms hushlogin.zsh ${HOME:-~}/.hushlogin
-  mkdir -p ${HOME:-~}/.zsh
+  rsync -avh --no-perms hushlogin.zsh $HOME/.hushlogin
+  mkdir -p $HOME/.zsh
   syncAliases
   syncConfig
   syncExports
   syncPath
   syncTheme
   syncPlugins
+  syncDirColors
   syncZshrc
 }
 
@@ -97,4 +109,6 @@ unset syncExports
 unset syncPath
 unset syncTheme
 unset syncPlugins
+unset syncDirColors
+unset syncZshrc
 unset sync

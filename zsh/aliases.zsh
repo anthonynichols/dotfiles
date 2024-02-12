@@ -8,7 +8,7 @@
 # Directories
 # ------------------------------------------------------------------------------
 
-# List contents
+# List directory contents
 # -l = use a long listing format
 # -A, --almost-all = do not list implied `.` and `..`
 # -h, --human-readable = with `-l`, print sizes in human readable format (e.g., 1K 234M 2G)
@@ -30,5 +30,17 @@ alias la='ls -lah'
 # Copy directory and its contents
 alias cpd='cp -r'
 
+# Copy directory and its contents
+alias cpd='cp -r'
+
 # Make directory with -p
 alias mkdirp='mkdir -p'
+
+# git
+alias gdprev='git diff HEAD~1 HEAD'
+
+# Compress
+# alias comp='function _compress(){ tar cjf $1.tar.bz2 $1; };_compress'
+
+# Get a count of the files in a directory
+alias dircount="ls -F | grep -v / | wc -l"

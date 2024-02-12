@@ -2,16 +2,6 @@
 
 cd "$(dirname "${BASH_SOURCE}")"
 
-function syncGo() {
-  # Back up the existing go file if it exists before moving over
-  if [[ -f /boot/config/go ]]; then
-    mv /boot/config/go /boot/config/go.orig
-  fi
-
-  rsync -avh go /boot/config/go
-  chmod 600 /boot/config/go
-}
-
 function syncDirColors() {
   # Back up the existing go file if it exists before moving over
   if [[ -f ~/.dir_colors ]]; then
@@ -21,9 +11,9 @@ function syncDirColors() {
   rsync -avh .dir_colors ~/.dir_colors
 }
 
+
 function sync() {
   rsync -avh --no-perms .vim .vimrc ~
-  syncGo
   syncDirColors
 }
 
@@ -38,6 +28,5 @@ else
 	fi
 fi
 
-unset syncGo
-unset syncDirColors
 unset sync
+unset syncDirColors
