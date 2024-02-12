@@ -10,6 +10,9 @@ set ttyfast
 " Add the g flag to search/replace by default
 set gdefault
 
+" Use UTF-8 without BOM
+set encoding=utf-8 nobomb
+
 " Change mapleader
 let mapleader=","
 
@@ -28,6 +31,7 @@ set showmode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git etc. anyway...
 set nobackup
+set nowritebackup
 set nowb
 set noswapfile
 
@@ -72,14 +76,21 @@ set scrolloff=3
 set title
 
 " Strip trailing whitespace (,ss)
-function! StripWhitespace ()
+function! StripWhitespace()
 	let save_cursor = getpos(".")
 	let old_query = getreg('/')
 	:%s/\s\+$//e
 	call setpos('.', save_cursor)
 	call setreg('/', old_query)
 endfunction
-noremap <leader>ss :call StripWhitespace ()<CR>
+noremap <leader>ss :call StripWhitespace()<CR>
+
+" Automatic installation of vim-plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 " Specify a directory for plugins
 " - Avoid using standard Vim directory names like 'plugin'
@@ -103,12 +114,12 @@ set number
 " set background=dark
 
 " Set extra options when running in GUI mode
-" if has("gui_running")
-"     set guioptions-=T
-"     set guioptions-=e
-"     set t_Co=256
-"     set guitablabel=%M\ %t
-" endif
+if has("gui_running")
+    set guioptions-=T
+    set guioptions-=e
+    set t_Co=256
+    set guitablabel=%M\ %t
+endif
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
