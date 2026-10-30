@@ -1,19 +1,22 @@
 # ==============================================================================
 # @anthonynichols path
+#
+# Never assign PATH from scratch here: this runs on every interactive shell and on
+# `source ~/.zshrc`, so a reset would wipe things like an activated venv.
 # ==============================================================================
 
-# Homebrew
-PATH=/usr/local/bin
+typeset -U path manpath   # unique entries, first occurrence wins
 
-# User directory
-if [[ -d ~/bin ]]; then
-    PATH=~/bin:$PATH
-fi
+# Append each existing directory that is not already on PATH. Never reorders or prepends.
+path_ensure() {
+  local d
+  for d in "$@"; do
+    [[ -d $d && -z ${path[(r)$d]} ]] && path+=( $d )
+  done
+  return 0
+}
 
-PATH=$PATH:/usr/bin
-PATH=$PATH:/bin
-PATH=$PATH:/usr/local/sbin
-PATH=$PATH:/usr/sbin
-PATH=$PATH:/sbin
+# Standard system dirs (path_helper normally provides these already)
+path_ensure /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/sbin /sbin
 
 export PATH
