@@ -14,6 +14,8 @@ source $ZCONFIGDIR/exports.zsh
 # ------------------------------------------------------------------------------
 # Path
 # ------------------------------------------------------------------------------
+# PATH is built once per login in ~/.zprofile. Personal scripts/executables go in
+# ~/.local/bin (already on PATH); ~/.zsh is for shell config, not standalone scripts.
 
 source $ZCONFIGDIR/path.zsh
 
