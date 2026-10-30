@@ -7,11 +7,6 @@ function lfind() {
   l ${2:-.} | grep -i ${1}
 }
 
-# Make dir and go!
-function mkdirpgo() {
-  mkdir -p -- "$1" && cd -P -- "$1"
-}
-
 # nvm, lazy-loaded: sourcing nvm.sh costs ~0.4s per new shell, so only load it on first `nvm` call.
 # The default Node's bin dir goes on PATH now, so node/npm/pnpm and global CLIs work immediately.
 _nvm_default=${$(<$NVM_DIR/alias/default 2>/dev/null)#v}
